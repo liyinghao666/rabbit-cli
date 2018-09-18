@@ -54,6 +54,7 @@ switch (process.argv[2]) {
       var list = files
       console.log( list.join( '\n\r' ) )
     })
+  break
   case '--cli':
     const src = path.dirname(__dirname) + '/static/'
     const target = process.cwd()
@@ -65,7 +66,7 @@ switch (process.argv[2]) {
             error(err)
           } else {
             if(stat.isFile()) {
-              fs.copyFile(_src, target);
+              copyFile(_src, target + '/' + path);
             } else if(stat.isDirectory()) {
               copyDir(_src, target + '/' + path, error)
             }
@@ -73,4 +74,5 @@ switch (process.argv[2]) {
         })
       })
     })
+  break
 }

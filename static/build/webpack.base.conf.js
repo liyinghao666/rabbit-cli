@@ -8,7 +8,7 @@ function resolve (dir) {
 }
 
 const createLintingRule = () => ({
-  test: /\.js$/,
+  test: /\.(js)$/,
   loader: 'eslint-loader',
   enforce: 'pre',
   include: [resolve('src'), resolve('test')],
@@ -34,6 +34,7 @@ module.exports = {
     extensions: ['.js', '.json'],
     alias: {
       '@': resolve('src'),
+      'styles': resolve('src/assets/style'),
     }
   },
   module: {
@@ -53,20 +54,6 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader'
-          },
-          {
-            loader: 'sass-loader'
-          }
-        ]
-      },
-      {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         loader: 'url-loader',
         options: {
@@ -81,18 +68,6 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      },{
-        test: /\.(gif|png|jpe?g|svg)$/i,
-        use: [
-          'file-loader',
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              bypassOnDebug: true,
-              disable: true,
-            },
-          },
-        ],
       }
     ]
   },
