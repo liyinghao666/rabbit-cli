@@ -1,0 +1,22 @@
+{
+  "name": "rabbit-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "hi": "./bin/hi.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liyinghao666/rabbit-cli.git"
+  },
+  "author": "rabbit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liyinghao666/rabbit-cli/issues"
+  },
+  "homepage": "https://github.com/liyinghao666/rabbit-cli#readme"
+}
